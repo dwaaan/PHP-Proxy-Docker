@@ -9,7 +9,7 @@ EXPOSE 443
 
 
 
-RUN apt-get update
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y apache2 php php-dom php-curl curl composer zip unzip && rm -rf /var/lib/apt/lists/*
 ENV APACHE_RUN_USER  www-data
 ENV APACHE_RUN_GROUP www-data
